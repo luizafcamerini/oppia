@@ -416,6 +416,9 @@ class AdminHandler(
             'platform_params_dicts': platform_params_dicts,
             'skill_list': skill_summary_dicts,
         })
+        
+    def _handle_reload_exploration():
+        pass
 
     @acl_decorators.can_access_admin_page
     def post(self) -> None:
