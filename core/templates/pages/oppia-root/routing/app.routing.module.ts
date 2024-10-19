@@ -48,10 +48,26 @@ const routes: Route[] = [
     canActivate: [IsLoggedInGuard],
   },
   {
+    path: AppConstants.PAGES_REGISTERED_WITH_FRONTEND.STORY_EDITOR.ROUTE,
+    loadChildren: () =>
+      import('pages/story-editor-page/story-editor-page.module').then(
+        m => m.StoryEditorPageModule
+      ),
+    canActivate: [IsLoggedInGuard],
+  },
+  {
     path: AppConstants.PAGES_REGISTERED_WITH_FRONTEND.MODERATOR.ROUTE,
     loadChildren: () =>
       import('pages/moderator-page/moderator-page.module').then(
         m => m.ModeratorPageModule
+      ),
+    canActivate: [IsLoggedInGuard],
+  },
+  {
+    path: AppConstants.PAGES_REGISTERED_WITH_FRONTEND.BLOG_DASHBOARD.ROUTE,
+    loadChildren: () =>
+      import('pages/blog-dashboard-page/blog-dashboard-page.module').then(
+        m => m.BlogDashboardPageModule
       ),
     canActivate: [IsLoggedInGuard],
   },
